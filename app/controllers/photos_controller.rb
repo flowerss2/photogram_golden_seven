@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
 def index
-
+@list_of_all_photos = Photo.all
   render("photos/index.html.erb")
 end
 
@@ -11,12 +11,20 @@ def new_form
 end
 
 def create_row
-
-  render("photos/create_row.html.erb")
+url = params[:ze_source]
+cap = params[:ze_caption]
+new_photo = Photo.new
+new_photo.source = url
+new_photo.caption = cap
+new_photo.save
+  #render("photos/create_row.html.erb")
+  redirect_to("/photos/#{new_photo.id}")
 end
 
 def show
-@id = params[:id]
+id = params[:id]
+@id = id
+@my_photo = Photo.find(id)
 
   render("photos/show.html.erb")
 end

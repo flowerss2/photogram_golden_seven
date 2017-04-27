@@ -1,1 +1,34 @@
 <h1>List of Photos</h1>
+
+
+<% @list_of_all_photos.each do |the_photo| %>
+
+<img src= "<%= the_photo.source %>">
+<p>
+<%= the_photo.caption  %>
+</p>
+
+<div>
+  <a href ="/photos/<%= the_photo.id %>">Show Image Details</a>
+<a href ="/photos/<%= the_photo.id %>/edit">Edit</a>
+<a href ="/delete_photo/<%= the_photo.id %>">Delete</a></div>
+<% end %>
+
+
+<div class="thumbnail">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mostar_Old_Town_Panorama_2007.jpg/640px-Mostar_Old_Town_Panorama_2007.jpg">
+
+    <div class="caption">
+      <a href="/photos/4359" class="btn btn-default btn-block">
+        Show Details
+      </a>
+
+      <a href="/photos/4359/edit" class="btn btn-default btn-block">
+        Edit
+      </a>
+
+      <a href="/delete_photo/4359" class="btn btn-default btn-block">
+        Delete
+      </a>
+    </div>
+  </div>
