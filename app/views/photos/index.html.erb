@@ -1,34 +1,51 @@
-<h1>List of Photos</h1>
+  <h1>All Photos</h1>
+  <div class="container">
+      <div class="col-md-8">
+        <h1>List of Photos</h1>
 
-
+<div class="thumbnail">
 <% @list_of_all_photos.each do |the_photo| %>
 
+
 <img src= "<%= the_photo.source %>">
-<p>
+<div class="caption"><p>
 <%= the_photo.caption  %>
 </p>
 
 <div>
-  <a href ="/photos/<%= the_photo.id %>">Show Image Details</a>
-<a href ="/photos/<%= the_photo.id %>/edit">Edit</a>
-<a href ="/delete_photo/<%= the_photo.id %>">Delete</a></div>
+  <a href ="/photos/<%= the_photo.id %>" class="btn btn-default btn-block">Show Image Details</a>
+<a href ="/photos/<%= the_photo.id %>/edit" class="btn btn-default btn-block">Edit</a>
+<a href ="/delete_photo/<%= the_photo.id %>" class="btn btn-default btn-block">Delete</a></div>
 <% end %>
+</div>
+</div>
 
+
+</div>
+</div>
+<!--
+<div class="container">
+      <div class="col-md-8">
+        <h1>List of Photos</h1>
 
 <div class="thumbnail">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mostar_Old_Town_Panorama_2007.jpg/640px-Mostar_Old_Town_Panorama_2007.jpg">
+<% @list_of_all_photos.each do |the_photo| %>
 
-    <div class="caption">
-      <a href="/photos/4359" class="btn btn-default btn-block">
-        Show Details
-      </a>
 
-      <a href="/photos/4359/edit" class="btn btn-default btn-block">
-        Edit
-      </a>
+<img src= "<%= the_photo.source %>">
+<div class="caption"><p>
+<%= the_photo.caption  %>
+</p>
 
-      <a href="/delete_photo/4359" class="btn btn-default btn-block">
-        Delete
-      </a>
-    </div>
-  </div>
+<div>
+  <a href ="/photos/<%= the_photo.id %>" class="btn btn-default btn-block">Show Image Details</a>
+<a href ="/photos/<%= the_photo.id %>/edit" class="btn btn-default btn-block">Edit</a>
+<a href ="/delete_photo/<%= the_photo.id %>" class="btn btn-default btn-block">Delete</a></div>
+<% end %>
+</div>
+</div>
+
+
+</div>
+</div>
+-->

@@ -18,7 +18,7 @@ new_photo.source = url
 new_photo.caption = cap
 new_photo.save
   #render("photos/create_row.html.erb")
-  redirect_to("/photos/#{new_photo.id}")
+  redirect_to("/photos")
 end
 
 def show
