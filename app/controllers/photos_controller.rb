@@ -34,23 +34,21 @@ id = params[:id]
 end
 
 def edit_form
-  id = params[:id]
-  @id = id
-  @my_photo = Photo.find(id)
+  @my_photo = Photo.find(params[:id])
   @capto = @my_photo.caption
   @urlo = @my_photo.source
-url = params[:the_source]
-cap = params[:the_caption]
-new_photo = Photo.new
-new_photo.source = url
-new_photo.caption = cap
-new_photo.save
+
   render("photos/edit_form.html.erb")
+
 end
 
 def update_row
+  @my_photo = Photo.find(params[:id])
+  @my_photo.caption = params[:the_caption]
+  @my_photo.source = params[:the_source]
 
-  render("photos/update_row.html.erb")
+      @my_photo.save
+redirect_to("/photos/#{@my_photo.id}")
 end
 
 def destroy_row
